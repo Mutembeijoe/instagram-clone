@@ -9,7 +9,7 @@ class CustomUser(AbstractUser):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete = models.CASCADE)
+    user = models.OneToOneField(CustomUser, on_delete = models.CASCADE, related_name='avatar')
     avatar = models.ImageField(upload_to='avatar_gallery', default='default.jpg')
 
 
