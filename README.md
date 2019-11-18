@@ -17,7 +17,7 @@ Instagram-clone, as the name dictates is a clone of the popular social media pla
 * You can view the live version of the app in [Live page](https://enigmatic-peak-80780.herokuapp.com/ "Personalis Galleria")
 
 ## Screenshots
-![image](https://github.com/Mutembeijoe/personalis-gallery/blob/master/screenshot/Screenshot.png)
+![image](https://github.com/Mutembeijoe/instagram-clone/blob/master/instagram_screenshot.png)
 
 
 ## Technologies Used
