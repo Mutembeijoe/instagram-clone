@@ -9,6 +9,9 @@
             <span class="h2 mx-2">{{user.username}}</span>
             <span><a href="{% url 'update_user' user.id%}" class="btn btn-sm btn-outline-secondary mx-3">Edit
                     profile</a></span>
+            <span><i class='fas fa-cog fa-2x'></i>
+                <a href="#"></a>
+            </span>
         </div>
         <div class="my-3">
             <span class="mx-1">{{user.images.all.count }} posts </span>
@@ -25,14 +28,11 @@
 <div id=profile-posts class="my-5">
     <h3 class="text-center border-bottom mb-5">Posts</h3>
     <div id="my-posts mx-5">
-        {% for post in user.images.all %}
-        <div class="card" style="width: 18rem;">
-            <img class="post-display" src="{{post.image.url}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">{{post}}</p>
-            </div>
+        <div id="photos" class="m-3">
+            {% for post in user.images.all %}
+            <img class="my-1" src="{{post.image.url}}" alt="{{post.name}}">
+            {%endfor%}
         </div>
-        {%endfor%}
     </div>
 </div>
 {%endblock content%}
