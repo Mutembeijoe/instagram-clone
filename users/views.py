@@ -14,3 +14,4 @@ class CreateUserView(CreateView):
 class DetailUserView(DetailView):
     model = CustomUser
     template_name = 'profile.html'
+    context_object_name = 'user'

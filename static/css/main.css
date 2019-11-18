@@ -1,3 +1,20 @@
 body{
     background-color: #FAFAFA;
 }
+
+#profile-summary{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#profile-pic img{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+}
+
+/* #profile-desc{;
+} */
