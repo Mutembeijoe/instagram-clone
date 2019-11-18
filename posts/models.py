@@ -14,7 +14,7 @@ class Image(models.Model):
         return self.name
 
     def get_absolute_url(self):
-       return reverse('profile', args=[str(self.id)])      
+       return reverse('profile', args=[str(self.user.id)])      
 
 class Comment(models.Model):
     image = models.ForeignKey(Image, on_delete=models.CASCADE, related_name='comments')

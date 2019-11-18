@@ -1,12 +1,25 @@
 from django.test import TestCase
 from django.urls import reverse
+from django.contrib.auth import get_user_model
 
 # Create your tests here.
 
-class PostTest(TestCase):
-   
-    def test_list_view(self):
-        response = self.client.get(reverse('home'))
+class TestPosts(TestCase):
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(
+            # self.user = User.objects.create_user(
+            username = "dummy",
+            email = "dummy@test.com",
+            password = 'secret'
+        )
+
+    def test_get_absolute_url(self):
+        self.assertEqual(self.user.get_absolute_url(), '/users/profile/1/')
+
+    def test_create_view(self):
+        response = self.client.get(reverse('create_post'))
         self.assertEqual(response.status_code, 302)
-        #Rdirect expected due to login
-        self.assertTemplateUsed('home.html')
+
+    def test_create_view_template(self):
+        response = self.client.get(reverse('create_post'))
+        self.assertTemplateUsed('post_create.html')
