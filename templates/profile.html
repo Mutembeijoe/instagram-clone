@@ -19,4 +19,18 @@
         </div>
     </div>
 </div>
+
+<div id=profile-posts class="my-5">
+    <h3 class="text-center border-bottom mb-5">Posts</h3>
+    <div id="my-posts mx-5">
+        {% for post in user.images.all %}
+        <div class="card" style="width: 18rem;">
+            <img class="post-display" src="{{post.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{post}}</p>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
 {%endblock content%}

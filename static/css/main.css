@@ -16,5 +16,12 @@ body{
     border-radius: 50%;
 }
 
-/* #profile-desc{;
-} */
+#my-posts{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.post-display{
+    max-width: 18rem;
+    height:300px;
+}
