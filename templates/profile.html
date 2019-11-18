@@ -2,12 +2,13 @@
 {% block content %}
 <div id="profile-summary" class="mt-5">
     <div id="profile-pic">
-        <img src="{{ object.avatar.avatar.url }}" alt=" {{user.username}}">
+        <img src="{{ object.avatar.url}}" alt=" {{user.username}}">
     </div>
     <div id="profile-desc">
         <div class="my-3">
             <span class="h2 mx-2">{{user.username}}</span>
-            <span><a href="#" class="btn btn-sm btn-outline-secondary mx-3">Edit profile</a></span>
+            <span><a href="{% url 'update_user' user.id%}" class="btn btn-sm btn-outline-secondary mx-3">Edit
+                    profile</a></span>
         </div>
         <div class="my-3">
             <span class="mx-1">{{user.images.all.count }} posts </span>
@@ -16,6 +17,7 @@
         </div>
         <div class="my-3">
             <span>{{user.email}}</span>
+            <p>Tel: {{user.telephone}}</p>
         </div>
     </div>
 </div>

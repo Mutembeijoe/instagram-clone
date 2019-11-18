@@ -1,13 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 # Create your models here.
 
 class CustomUser(AbstractUser):
     avatar = models.ImageField(upload_to='avatar_gallery', default='default.jpg')
-    telephone = models.CharField(max_length=10)
-    
+    telephone = models.CharField(max_length=10, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('profile', args=[str(self.id)])
 
 
 # class Profile(models.Model):

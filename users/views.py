@@ -18,9 +18,7 @@ class DetailUserView(DetailView):
     context_object_name = 'user'
 
 class UpdateUserView(UpdateView):
-    # form_class = CustomUserChangeForm
-    # template_name = 'update_user.html'
-    # success_url = reverse_lazy('profile')
     model = get_user_model()
     template_name = 'update_user.html'
-    fields = ['username', 'email', 'avatar']
+    fields = ['username', 'email', 'avatar', 'telephone']
+    # success_url = reverse_lazy('profile', args=[str(model.id)])
